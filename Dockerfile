@@ -10,7 +10,7 @@ RUN apt-get update -qq  \
     && git clone https://github.com/gebart/python-v4l2capture.git \
     && mkdir -p /capture
 WORKDIR /python-v4l2capture
-RUN ./setup.py install 
+RUN ./setup.py install
+COPY simplecapture.py simplecapture.py
 WORKDIR /capture
-COPY capture.py capture.py
-CMD python capture.py
+CMD python ../python-v4l2capture/simplecapture.py
