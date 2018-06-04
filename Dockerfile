@@ -11,6 +11,6 @@ RUN apt-get update -qq  \
     && mkdir -p /capture
 WORKDIR /python-v4l2capture
 RUN ./setup.py install 
-COPY capture.py capture.py
 WORKDIR /capture
+COPY capture.py capture.py
 CMD python capture.py
