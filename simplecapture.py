@@ -30,5 +30,6 @@ image_data = video.read()
 video.close()
 image = Image.frombytes("RGB", (size_x, size_y), image_data)
 timestr = time.strftime("%Y%m%d-%H%M%S")
-image.save("/capture/image_" + timestr + ".jpg")
-print "Saved image.jpg (Size: " + str(size_x) + " x " + str(size_y) + ")"
+imagename = "/capture/image_" + timestr + ".jpg"
+image.save(imagename)
+print "Saved {} (Size: {}x{})".format(imagename,size_x,size_y)
